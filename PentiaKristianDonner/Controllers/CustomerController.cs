@@ -39,7 +39,7 @@ namespace PentiaKristianDonner.Controllers
                         customers = searches.SearchByModel(searchString).ToList().AsQueryable();
                         break;
                     case "SearchBySalesPerson":
-
+                        customers = searches.SearchBySalesPerson(searchString).ToList().AsQueryable();
                         break;
 
 
