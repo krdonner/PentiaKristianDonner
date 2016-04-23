@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PentiaKristianDonner.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.TextBox("SearchString",null, new { @class = "form-control", type = "text", required = "required", placeholder="Search" }  ) 
+        <br>
+        <input name="submit" type="submit" class="btn btn-info" value="SearchByName" />
+        <input name="submit" type="submit" class="btn btn-info" value="SearchByAddress" />
+        <input name="submit" type="submit" class="btn btn-info" value="SearchByMake" />
+        <input name="submit" type="submit" class="btn btn-info" value="SearchByModel" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
+        </td>
+    </tr>
+}
+
+</table>
