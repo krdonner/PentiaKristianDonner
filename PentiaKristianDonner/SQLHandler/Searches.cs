@@ -58,7 +58,8 @@ namespace PentiaKristianDonner.SQLHandler
                             Surname = cust.Surname,
                             Address = cust.Address,
                             Age = cust.Age,
-                            Created = cust.Created
+                            Created = cust.Created,
+                            CustomerID = cust.CustomerID
                         };
                         customers.Add(cl);
                     }
@@ -96,7 +97,8 @@ namespace PentiaKristianDonner.SQLHandler
                             Surname = cust.Surname,
                             Address = cust.Address,
                             Age = cust.Age,
-                            Created = cust.Created
+                            Created = cust.Created,
+                            CustomerID = cust.CustomerID
                         };
                         customers.Add(cl);
                     }
@@ -120,15 +122,16 @@ namespace PentiaKristianDonner.SQLHandler
                     from o in db.Customers
                     where o.CustomerID == custID
                     select o;
-                foreach (var customer in q)
+                foreach (var cust in q)
                 {
                     var cl = new Customer
                     {
-                        Name = customer.Name,
-                        Surname = customer.Surname,
-                        Address = customer.Address,
-                        Age = customer.Age,
-                        Created = customer.Created
+                        Name = cust.Name,
+                        Surname = cust.Surname,
+                        Address = cust.Address,
+                        Age = cust.Age,
+                        Created = cust.Created,
+                        CustomerID = cust.CustomerID
                     };
                     customers.Add(cl);
 
