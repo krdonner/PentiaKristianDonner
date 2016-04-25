@@ -9,8 +9,7 @@ namespace PentiaKristianDonner.DAL
 {
    public class PentiaKristianDonnerInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<PentiaKristianDonnerContext>
     {
-        protected override void Seed(PentiaKristianDonnerContext context) // Jag förstår att ni inte tycker om Seed metoden. Har 
-                                                                          // haft väldiga problem med den. 
+        protected override void Seed(PentiaKristianDonnerContext context) 
         {
 
             var cars = new List<Car>
